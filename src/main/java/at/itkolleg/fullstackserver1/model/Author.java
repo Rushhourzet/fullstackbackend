@@ -1,16 +1,15 @@
-package at.itkolleg.fullstackserver1;
+package at.itkolleg.fullstackserver1.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 public class Author {
-
     private int id;
     private String name;
     private String label;
+    @OneToMany
+    private Set<Citation> citations;
 
     public String getName() {
         return name;

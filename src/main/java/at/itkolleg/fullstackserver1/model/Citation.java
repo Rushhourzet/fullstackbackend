@@ -1,15 +1,13 @@
-package at.itkolleg.fullstackserver1;
+package at.itkolleg.fullstackserver1.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Citation {
     private int id;
     private String citation;
-    private int auth_id;
+    @ManyToOne
+    private Author author;
 
     @Id
     public int getId() {
@@ -29,11 +27,7 @@ public class Citation {
         this.citation = citation;
     }
 
-    public int getAuth_id() {
-        return auth_id;
-    }
-
-    public void setAuth_id(int auth_id) {
-        this.auth_id = auth_id;
+    public void setAuthor(Author author) {
+        this.author = author;
     }
 }
