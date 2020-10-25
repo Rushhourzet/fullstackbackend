@@ -4,19 +4,20 @@ import javax.persistence.*;
 
 @Entity
 public class Citation {
-    private int id;
+    private Long cit_id;
     private String citation;
     @ManyToOne
+    @JoinColumn(name="author_uid")
     private Author author;
 
     @Id
-    public int getId() {
-        return id;
+    public Long getCit_id() {
+        return cit_id;
     }
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public void setId(int id) {
-        this.id = id;
+    public void setCit_id(Long id) {
+        this.cit_id = id;
     }
 
     public String getCitation() {

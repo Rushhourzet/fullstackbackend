@@ -24,11 +24,11 @@ public class AuthorService {
         repo.save(author);
     }
 
-    public Optional<Author> get(int id){
+    public Optional<Author> get(Long id){
         return repo.findById(id);
     }
 
-    public void deleteById(int id){
+    public void deleteById(Long id){
         repo.deleteById(id);
     }
 }

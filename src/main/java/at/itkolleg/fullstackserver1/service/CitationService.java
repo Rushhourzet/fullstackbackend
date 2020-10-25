@@ -24,11 +24,11 @@ public class CitationService {
         repo.save(citation);
     }
 
-    public Optional<Citation> get(int id){
+    public Optional<Citation> get(Long id){
         return repo.findById(id);
     }
 
-    public void deleteById(int id){
+    public void deleteById(Long id){
         repo.deleteById(id);
     }
 }

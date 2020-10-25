@@ -5,9 +5,9 @@ import java.util.Set;
 
 @Entity
 public class Author {
-    private int id;
+    private Long uid;
     private String name;
-    private String label;
+    private String role;
     @OneToMany
     private Set<Citation> citations;
 
@@ -19,23 +19,23 @@ public class Author {
         this.name = name;
     }
 
-    public String getLabel() {
-        return label;
+    public String getRole() {
+        return role;
     }
 
-    public void setLabel(String label) {
-        this.label = label;
+    public void setRole(String label) {
+        this.role = label;
     }
 
 
     @Id
-    public int getId() {
-        return id;
+    public Long getUid() {
+        return uid;
     }
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public void setId(int id) {
-        this.id = id;
+    public void setUid(Long id) {
+        this.uid = id;
     }
 
 }
